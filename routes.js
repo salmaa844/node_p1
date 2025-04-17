@@ -1,9 +1,13 @@
+import morgan from 'morgan';
 import * as handlers from './handlers.js'
+import ProductRouter from './module/product/product.routes.js';
 
 export function init(express,app){
     app.use(express.json());
-    app.route("/product").post(handlers.addproduct).get(handlers.getproduct);
-    app.route("/product/:id").put(handlers.updateproduct1).patch(handlers.updateproduct2).delete(handlers.deleteproduct);
-   
+    
+    app.use(morgan("dev"));
+
+    app.use("/product",ProductRouter);
+    
 }
 
