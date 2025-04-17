@@ -12,8 +12,8 @@ export const addproduct =(req,res)=>{
     product.push(newproduct);
    
     res.status(201).json({
-        mes:"successful",
-        product
+        mes:"Add successful",
+       
     })
 
 };
