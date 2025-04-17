@@ -33,7 +33,7 @@ export const updateproduct1=(req,res)=>{
     product[index]={...product[index],name,price}
     res.status(200).json({
      mes:"update successful",
-     product
+     
  })
  }
  export const updateproduct2=(req,res)=>{
@@ -49,7 +49,7 @@ export const updateproduct1=(req,res)=>{
     }
     res.status(200).json({
         mes:"update data",
-        product
+       
     })
 
  }
@@ -62,7 +62,10 @@ export const updateproduct1=(req,res)=>{
         })
        }
        product.splice(index,1)
-       res.json(product)
+       res.status(200).json({
+        mes:"delete successful data",
+       
+    })
     
  }
 
